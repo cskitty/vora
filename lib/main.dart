@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         //primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: "Visual Aid"),
+      home: MyHomePage(title: "Vora"),
     );
   }
 }

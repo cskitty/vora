@@ -35,13 +35,13 @@ class _HomeViewState extends State<HomeView> {
   @override
   initState() {
     super.initState();
-    _maxLabel = new List(5);
-    _hasStarted = true;
+    _maxLabel = ["", "", ""];
 
     _myTts.setVolume(1.0);
-    _myTts.speak("Recognition started");
+    _myTts.speak("Started");
     _myTts.stop();
     CameraViewSingleton.startPredicting = true;
+    _hasStarted = true;
   }
 
   Recognition _getObject(results) {
@@ -73,7 +73,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recgonizer'),
+        title: Text('Object Recgonizer'),
       ),
       key: scaffoldKey,
       backgroundColor: Colors.black,
@@ -86,9 +86,9 @@ class _HomeViewState extends State<HomeView> {
           boundingBoxes(results),
 
           Align(
-            alignment: Alignment(0, 0.6),
+            alignment: Alignment(0, 0.65),
             child: SizedBox(
-                height: 100, //height of button
+                height: 125, //height of button
                 width: 400, //width of button
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -107,43 +107,19 @@ class _HomeViewState extends State<HomeView> {
                         ),
                     onPressed: () {
                       setState(() {
-                        _hasStarted = false;
-                        _myTts.speak("Recognition stopped");
-                        CameraViewSingleton.startPredicting = false;
-                        Navigator.pop(context);
+                        if (_hasStarted) {
+                          _hasStarted = false;
+
+                          _myTts.speak("Stopped");
+                          _myTts.stop();
+
+                          CameraViewSingleton.startPredicting = false;
+                          Navigator.pop(context);
+                        }
                       });
                     },
                     child: Text(_newVoiceText))),
           ),
-
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                TextButton.icon(
-                  icon: Icon(Icons.access_alarm),
-                  label:
-                      Text((stats != null) ? '${stats.inferenceTime} ms' : ''),
-                  onPressed: () {},
-                ),
-                TextButton.icon(
-                  icon: Icon(Icons.access_time_outlined),
-                  label: Text(
-                      (stats != null) ? '${stats.totalElapsedTime} ms' : ''),
-                  onPressed: () {},
-                ),
-                TextButton.icon(
-                  icon: Icon(Icons.aspect_ratio),
-                  label: Text((stats != null)
-                      ? '${CameraViewSingleton.inputImageSize?.width} X ${CameraViewSingleton.inputImageSize?.height}'
-                      : ''),
-                  onPressed: () {},
-                ),
-              ],
-            ),
-          )
         ],
       ),
     );

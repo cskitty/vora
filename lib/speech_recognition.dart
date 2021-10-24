@@ -88,7 +88,7 @@ class _SpeechRecognitionPageState extends State<SpeechRecognitionPage> {
             context, MaterialPageRoute(builder: (context) => HomeView()));
       }
 
-      if (tmp.contains("settings")) {
+      if (tmp.contains("settings") || tmp.contains("setting")) {
         stopListening();
         Navigator.push(
             context,
@@ -140,7 +140,7 @@ class _SpeechRecognitionPageState extends State<SpeechRecognitionPage> {
   }
 
   //static AudioCache player = new AudioCache();
-  FlutterTts tts = FlutterTts();
+  // FlutterTts tts = FlutterTts();
 
   Map<String, HighlightedWord> words = {
     'Object Detector': HighlightedWord(
