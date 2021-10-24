@@ -1,22 +1,24 @@
-# App for Object Detection, Voice Recognition, TTS using Flutter, TF Lite
+# Vision Object Recoginition Aid
+
+## An app helping vision impaired people.
+
+## Website
+
+http://vora.ml/
 
 ## Features
 
 - [x] Realtime Object Detection
 - [x] Use bluetooth selfie button to start/stop
 - [x] TTS to speak out the recognized object
-- [ ] Add location information on TTS
-- [ ] Add distance estimation
-- [ ] Add warning for objects in front of your feet
-- [ ] Voice interaction for more commands
+- [x] Add facetime call to volunteers for help
+- [x] Created website http://vora.ml/ for volunteer registeration
 
-## Install Flutter
+## Command Line to Install on Iphone
 
 ```console
-git clone https://github.com/flutter/flutter.git -b stable
-cd flutter
-flutter --version
-flutter precache
+flutter build ios
+flutter install
 ```
 
 ## Install Cocoapods for iOS
@@ -42,13 +44,6 @@ open visual studio code
 install flutter plugin  
 open visual_aid directory  
 open lib/main.dart, click the run to install on iphone
-
-## Command Line to Install on Iphone
-
-```console
-flutter build ios
-flutter install
-```
 
 ## iPhone Setup
 
