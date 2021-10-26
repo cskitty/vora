@@ -7,15 +7,13 @@ class MyFaceTimePage extends StatefulWidget {
 }
 
 class _MyFaceTimePageState extends State<MyFaceTimePage> {
-
   @override
   void initState() {
-    _getThingsOnStartup().then((value){
+    _getThingsOnStartup().then((value) {
       print('Async done');
     });
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +24,9 @@ class _MyFaceTimePageState extends State<MyFaceTimePage> {
   Future _getThingsOnStartup() async {
     _launchURL();
   }
- 
+
   _launchURL() async {
-    final String url = 'facetime:9497748505';
+    final String url = 'facetime:9493578835';
     if (await canLaunch(url)) {
       await launch(url);
     } else {

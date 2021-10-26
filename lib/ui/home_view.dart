@@ -73,7 +73,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Object Recgonizer'),
+        title: Text('Object Recognizer'),
       ),
       key: scaffoldKey,
       backgroundColor: Colors.black,

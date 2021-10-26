@@ -99,7 +99,7 @@ class _SpeechRecognitionPageState extends State<SpeechRecognitionPage> {
       if (tmp.contains("help") && tmp.contains("me")) {
         stopListening();
         _myTts.speak(
-            "Finding volunteers. Volunteer Melody is ready to help. Press buttom part to start facetime with her.");
+            "Finding volunteers. Volunteer Katherine is ready to help. Press buttom part to start facetime with her.");
         _myTts.stop();
 
         Navigator.push(
