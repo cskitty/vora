@@ -7,6 +7,7 @@ import 'package:vora/ui/camera_view_singleton.dart';
 import 'package:vora/speech_singleton.dart';
 import 'camera_view.dart';
 import 'package:vora/tflite/classifier.dart';
+import '../app_theme.dart';
 
 /// [HomeView] stacks [CameraView] and [BoxWidget]s with bottom sheet for stats
 class HomeView extends StatefulWidget {
@@ -76,7 +77,7 @@ class _HomeViewState extends State<HomeView> {
         title: Text('Object Recognizer'),
       ),
       key: scaffoldKey,
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black87,
       body: Stack(
         children: <Widget>[
           // Camera View
@@ -93,11 +94,11 @@ class _HomeViewState extends State<HomeView> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         primary: _hasStarted
-                            ? Colors.red
-                            : Colors.blue, //background color of button
+                            ? Colors.red.shade300
+                            : Colors.blue.shade300, //background color of button
                         side: BorderSide(
-                            width: 3,
-                            color: Colors.brown), //border width and color
+                            width: 2,
+                            color: Colors.grey), //border width and color
                         elevation: 10, //elevation of button
                         shape: RoundedRectangleBorder(
                             //to set border radius to button

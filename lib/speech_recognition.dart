@@ -9,6 +9,7 @@ import 'package:vora/ui/home_view.dart';
 import 'package:vora/facetime.dart';
 import 'package:vora/settings.dart';
 import 'package:vora/speech_singleton.dart';
+import 'app_theme.dart';
 
 class SpeechRecognitionPage extends StatefulWidget {
   SpeechRecognitionPage({Key key, this.title}) : super(key: key);
@@ -195,6 +196,7 @@ class _SpeechRecognitionPageState extends State<SpeechRecognitionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppTheme.colors.blue_grey,
         title: Text(
             '${lastStatus} [${(_confidence * 100.0).toStringAsFixed(1)}%]'),
       ),
@@ -222,7 +224,7 @@ class _SpeechRecognitionPageState extends State<SpeechRecognitionPage> {
                 child: SingleChildScrollView(
                   reverse: true,
                   child: Container(
-                    padding: const EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 150.0),
+                    padding: const EdgeInsets.fromLTRB(50.0, 30.0, 30.0, 150.0),
                     child: TextHighlight(
                       text: _text,
                       words: words,
@@ -237,7 +239,7 @@ class _SpeechRecognitionPageState extends State<SpeechRecognitionPage> {
               ),
             ),
             Expanded(
-                flex: 30,
+                flex: 70,
                 child: Container(
                   //width: double.infinity,
                   margin:
@@ -256,7 +258,7 @@ class _SpeechRecognitionPageState extends State<SpeechRecognitionPage> {
                             elevation: 10, //elevation of button
                             shape: RoundedRectangleBorder(
                                 //to set border radius to button
-                                borderRadius: BorderRadius.circular(30)),
+                                borderRadius: BorderRadius.circular(200)),
                             padding: EdgeInsets.all(
                                 20) //content padding inside button
                             ),
@@ -271,7 +273,10 @@ class _SpeechRecognitionPageState extends State<SpeechRecognitionPage> {
                             stopListening();
                           }
                         },
-                        child: Icon(_isListening ? Icons.mic : Icons.mic_none),
+                        child: Icon(
+                          _isListening ? Icons.mic : Icons.mic_none,
+                          size: 70.0,
+                        ),
                       )),
                 )),
           ],

@@ -13,7 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  TTSsettings.newVolume = (prefs.getDouble('Volume') ?? 1);
+  TTSsettings.newVolume = (prefs.getDouble('Volume') ?? 0.5);
   TTSsettings.newPitch = (prefs.getDouble('Pitch') ?? 1.25);
   TTSsettings.newRate = (prefs.getDouble('Rate') ?? 0.5);
 
@@ -25,13 +25,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Vora',
+      title: 'My Vision Aid',
       theme: ThemeData(
+        fontFamily: 'SF Pro Display Regular',
+        //primaryColor: Colors.red,
         primaryColor: AppTheme.colors.blue_grey,
         //primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: "Vora"),
+      home: MyHomePage(title: "Visual Aid"),
     );
   }
 }
