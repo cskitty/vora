@@ -14,11 +14,11 @@ http://vora.ml/
 - [x] Add facetime call to volunteers for help
 - [x] Created website http://vora.ml/ for volunteer registeration
 
-## Command Line to Install on Iphone
+## Command Line to Compile and Install on Iphone
 
 ```console
 flutter build ios
-flutter install
+flutter install ios
 ```
 
 ## Install Cocoapods for iOS
@@ -52,6 +52,6 @@ Runner->Targets->Signing&Capabilities
 Select your personal team
 Change Bundle Indentifier to yours
 
-## Accept the iPhone Developer Profile
+## Accept the iPhone Developer Profile to run the app on iOS
 
 General->Device Management->Accept developer
