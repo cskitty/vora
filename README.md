@@ -1,6 +1,6 @@
-# Vision Object Recoginition Aid
+# Vision Object Recognition Aid
 
-## An app helping vision impaired people.
+## An app helping the visually impaired in their daily lives.
 
 ## Website
 
@@ -12,9 +12,9 @@ https://vorastudio.org/
 - [x] Use bluetooth selfie button to start/stop
 - [x] TTS to speak out the recognized object
 - [x] Add facetime call to volunteers for help
-- [x] Created website http://vora.ml/ for volunteer registeration
+- [x] Created website https://vorastudio.org/ for volunteer registeration
 
-## Command Line to Compile and Install on Iphone
+## Command Line to Compile and Install on IPhone
 
 ```console
 flutter build ios
