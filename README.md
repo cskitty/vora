@@ -1,4 +1,4 @@
-# Vision Object Recognition Aid
+# Visual Object Recognition Aid
 
 ## An app helping the visually impaired in their daily lives.
 
